@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace Domain.Entities
 {
@@ -12,7 +13,7 @@ namespace Domain.Entities
         //description of category
         public string Description { get; set; }
         //navigation property
-        //relationship between Content and Category: one-to-one
-        public virtual Content Content { get; set; }
+        //relationship between Content and Category: one-to-many
+        public virtual IEnumerable<Content> Contents { get; set; }
     }
 }
