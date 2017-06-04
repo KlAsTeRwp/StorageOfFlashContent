@@ -13,7 +13,8 @@ namespace Domain.Entities
         public int Value { get; set; }
         //description of rate
         public string Description { get; set; }
-        //relationship between Content and Rate: one-to-one
+        //navigation propery
+        //relationship between Content and Rate: zero or one-to-one
         public virtual Content Content { get; set; }
     }
 }

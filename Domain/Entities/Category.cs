@@ -11,7 +11,7 @@ namespace Domain.Entities
         public int ID { get; set; }
         //description of category
         public string Description { get; set; }
-        //reference to foreign key
+        //navigation property
         //relationship between Content and Category: one-to-one
         public virtual Content Content { get; set; }
     }

@@ -12,7 +12,7 @@ namespace Domain.Entities
         //array of bytes
         //here will storage file
         public byte[] Data { get; set; }
-        //references to foreign keys
+        //navigation properies
         //relationship between Content and ContentDescription: one-to-one
         public virtual ContentDescription ContentDescription { get; set; }
         //realtionship between Content and ContentDescription: one-to-one

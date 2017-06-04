@@ -12,8 +12,8 @@ namespace Domain.Entities
         public int ID { get; set; }
         //description
         public string Description { get; set; }
-        //reference to foreign key
-        //relationship between Content and ContentDescprion: one-to-one
+        //navigation propery
+        //relationship between ContentDescprion and Content: zero or one-to-one
         public virtual Content Content { get; set; }
     }
 }
