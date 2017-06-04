@@ -1,0 +1,6 @@
+/packages
+/packages/*
+/Domain/bin
+/WebUI/bin
+/Domain/bin/*
+/WebUI/bin/*
