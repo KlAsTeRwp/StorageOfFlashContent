@@ -6,5 +6,6 @@ Storage of flash content
 <p><li>I will tell you later about hierarchy of user's group, such as default user, administrator, content-manager, moderator</li></p>
 <p>See you later, guy;)</p><br>
 <p><li>Hey, guy, 03.06.2017 has been added two subproject's, you can see it in branch 'dev', but i commit it only now, i'm sorry.</li></p>
-<p>See you later in this repo</p>
+<p>See you later in this repo</p><br>
+<p><li>Hello, is 05.06.2017 now and i added new entities, that you can see in Domain/Entities, interface for repository of ContentTpye-entity and implemented it. See you;)</li></p>
 
