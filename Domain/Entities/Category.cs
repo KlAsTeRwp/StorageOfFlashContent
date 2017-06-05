@@ -14,6 +14,11 @@ namespace Domain.Entities
         public string Description { get; set; }
         //navigation property
         //relationship between Content and Category: one-to-many
-        public virtual IEnumerable<Content> Contents { get; set; }
+        public virtual ICollection<Content> Contents { get; set; }
+
+        public Category()
+        {
+            Contents = new List<Content>();
+        }
     }
 }
