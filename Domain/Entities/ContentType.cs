@@ -9,6 +9,8 @@ namespace Domain.Entities
         //primary key
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+        //type, etc.'audio/mpeg'
+        public string Type { get; set; }
         //extensions of content
         public string Extensions { get; set; }
     }
