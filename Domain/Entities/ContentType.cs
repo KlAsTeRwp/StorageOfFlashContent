@@ -10,8 +10,10 @@ namespace Domain.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         //type, etc.'audio/mpeg'
+        [Required]
         public string Type { get; set; }
         //extensions of content
+        [Required]
         public string Extensions { get; set; }
     }
 }
