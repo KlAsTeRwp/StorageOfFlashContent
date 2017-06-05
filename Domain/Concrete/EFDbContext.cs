@@ -11,11 +11,11 @@ namespace Domain.Concrete
 {
     public class EFDbContext : DbContext
     {
-        DbSet<Category> Categories { get; set; }
-        DbSet<Content> Contents { get; set; }
-        DbSet<ContentDescription> ContentDescriptions { get; set; }
-        DbSet<ContentType> ContentTypes { get; set; }
-        DbSet<Rate> Rates { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Content> Contents { get; set; }
+        public DbSet<ContentDescription> ContentDescriptions { get; set; }
+        public DbSet<ContentType> ContentTypes { get; set; }
+        public DbSet<Rate> Rates { get; set; }
 
         public EFDbContext(): base("DefaultConnection")
         {
