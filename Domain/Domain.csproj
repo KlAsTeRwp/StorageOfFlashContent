@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IContentRepository.cs" />
     <Compile Include="Abstract\IContentTypeRepository.cs" />
+    <Compile Include="Concrete\EFContentRepository.cs" />
     <Compile Include="Concrete\EFContentTypeRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Entities\Category.cs" />

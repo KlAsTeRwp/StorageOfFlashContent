@@ -32,6 +32,7 @@ namespace WebUI.Infrastructure
         public void AddBindings()
         {
             kernel.Bind<IContentTypeRepository>().To<EFContentTypeRepository>();
+            kernel.Bind<IContentRepository>().To<EFContentRepository>();
         }
     }
 }
