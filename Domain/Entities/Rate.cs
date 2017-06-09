@@ -13,9 +13,6 @@ namespace Domain.Entities
         public int Value { get; set; }
         //description of rate
         public string Description { get; set; }
-
-        //foreign key
-        public int? ContentID { get; set; }
         //navigation property
         //relationship between Content and Rate: zero or one-to-one
         public virtual Content Content { get; set; }

@@ -17,7 +17,7 @@ namespace Domain.Concrete
         public DbSet<ContentType> ContentTypes { get; set; }
         public DbSet<Rate> Rates { get; set; }
 
-        public EFDbContext(): base("DefaultConnection")
+        public EFDbContext(): base("MS_TableConnectionString")
         {
         }
     }

@@ -47,11 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICategoryRepository.cs" />
     <Compile Include="Abstract\IContentRepository.cs" />
     <Compile Include="Abstract\IContentTypeRepository.cs" />
+    <Compile Include="Abstract\IRateRepository.cs" />
+    <Compile Include="Concrete\EFCategoryRepository.cs" />
     <Compile Include="Concrete\EFContentRepository.cs" />
     <Compile Include="Concrete\EFContentTypeRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
+    <Compile Include="Concrete\EFRateRepository.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Content.cs" />
     <Compile Include="Entities\ContentDescription.cs" />

@@ -10,15 +10,12 @@ namespace Domain.Entities
         //primary key
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+        //name of category
+        public string Name { get; set; }
         //description of category
         public string Description { get; set; }
         //navigation property
         //relationship between Content and Category: one-to-many
         public virtual ICollection<Content> Contents { get; set; }
-
-        public Category()
-        {
-            Contents = new List<Content>();
-        }
     }
 }

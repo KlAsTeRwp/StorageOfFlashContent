@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Domain.Abstract;
 using Domain.Entities;
 
@@ -9,7 +10,13 @@ namespace Domain.Concrete
     {
         EFDbContext context = new EFDbContext();
 
-        public IEnumerable<Content> Contents => context.Contents;
+        public IEnumerable<Content> Contents
+        {
+            get
+            {
+                return context.Contents;
+            }
+        }
 
         public Content Delete(int id)
         {
@@ -45,11 +52,8 @@ namespace Domain.Concrete
                     if (dbEntry != null)
                     {
                         dbEntry.Category = content.Category;
-                        dbEntry.CategoryID = content.CategoryID;
                         dbEntry.ContentDescription = content.ContentDescription;
-                        dbEntry.ContentDescriptionID = content.ContentDescriptionID;
                         dbEntry.ContentType = content.ContentType;
-                        dbEntry.ContentTypeID = content.ContentTypeID;
                         dbEntry.Data = content.Data;
                     }
                 }

@@ -33,6 +33,8 @@ namespace WebUI.Infrastructure
         {
             kernel.Bind<IContentTypeRepository>().To<EFContentTypeRepository>();
             kernel.Bind<IContentRepository>().To<EFContentRepository>();
+            kernel.Bind<ICategoryRepository>().To<EFCategoryRepository>();
+            kernel.Bind<IRateRepository>().To<EFRateRepository>();
         }
     }
 }

@@ -12,10 +12,8 @@ namespace Domain.Entities
         public int ID { get; set; }
         //description
         public string Description { get; set; }
-        //foreign key
-        public int? ContentDescriptionID { get; set; }
         //navigation property
         //relationship between ContentDescprion and Content: zero or one-to-one
-        public virtual Content Content { get; set; }
+        //public virtual Content Content { get; set; }
     }
 }
