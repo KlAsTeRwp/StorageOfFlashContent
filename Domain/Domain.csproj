@@ -58,7 +58,6 @@
     <Compile Include="Concrete\EFRateRepository.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Content.cs" />
-    <Compile Include="Entities\ContentDescription.cs" />
     <Compile Include="Entities\ContentType.cs" />
     <Compile Include="Entities\Rate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

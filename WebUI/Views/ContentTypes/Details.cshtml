@@ -1,0 +1,35 @@
+﻿@model Domain.Entities.ContentType
+
+@{
+    ViewBag.Title = "Информация о выбранном типе контента";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Информация о выбранном типе контента</h2>
+
+<div>
+    <h4>Тип контента</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extensions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extensions)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Назад к списку", "Index")
+</p>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 using Domain.Abstract;
 using Domain.Concrete;
 using Domain.Entities;
@@ -17,7 +18,7 @@ namespace Domain.Concrete
         {
             get
             {
-                return context.Rates;
+                return context.Rates.Include(x => x.Content);
             }
         }
 

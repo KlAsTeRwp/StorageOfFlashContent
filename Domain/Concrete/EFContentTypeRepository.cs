@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain.Abstract;
 using Domain.Entities;
+using System.Data;
+using System.Data.Entity;
 
 namespace Domain.Concrete
 {
@@ -12,7 +14,13 @@ namespace Domain.Concrete
     {
         EFDbContext context = new EFDbContext();
 
-        public IEnumerable<ContentType> ContentTypes => context.ContentTypes;
+        public IEnumerable<ContentType> ContentTypes
+        {
+            get
+            {
+                return context.ContentTypes.Include(x => x.Contents);
+            }
+        } 
 
         public ContentType Delete(int id)
         {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Domain.Abstract;
 using Domain.Entities;
+using System.Data.Entity;
 
 namespace Domain.Concrete
 {
@@ -11,7 +12,7 @@ namespace Domain.Concrete
         {
             get
             {
-                return context.Categories;
+                return context.Categories.Include(x => x.Contents);
             }
         }
 

@@ -13,11 +13,11 @@ namespace Domain.Concrete
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Content> Contents { get; set; }
-        public DbSet<ContentDescription> ContentDescriptions { get; set; }
         public DbSet<ContentType> ContentTypes { get; set; }
         public DbSet<Rate> Rates { get; set; }
 
-        public EFDbContext(): base("MS_TableConnectionString")
+        //public EFDbContext(): base("MS_TableConnectionString")
+        public EFDbContext(): base("DefaultConnection")
         {
         }
     }

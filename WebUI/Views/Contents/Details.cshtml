@@ -1,0 +1,60 @@
+﻿@model Domain.Entities.Content
+
+@{
+    ViewBag.Title = "Информация о выбранном контенте";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Информация о выбранном контенте</h2>
+
+<div>
+    <h4>Контент</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentType.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentType.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.ActionLink("Посмотреть файл", "GetFile", new { id = Model.ID})
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изенить", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Назад к списку", "Index")
+</p>

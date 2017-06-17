@@ -1,0 +1,44 @@
+﻿@model WebUI.Models.ViewModels.ContentListViewModel
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageRate)
+        </dd>
+
+        <dd>
+            @Html.DisplayName("Контент")
+        </dd>
+        <dt>
+            <object data="/Contents/GetFile(@Model.ID)" type="application/x-shockwave-flash" width="489" height="308"> </object>
+        </dt>
+    </dl>
+</div>

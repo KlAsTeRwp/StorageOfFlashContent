@@ -1,0 +1,15 @@
+﻿@using WebUI.Models.ViewModels
+@model ContentListViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <hr />
+    @Html.Partial("GetContent", Model)
+</div>
+<p>
+    @Html.ActionLink("На главную", "Index")
+</p>

@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Domain.Abstract;
 using Domain.Entities;
+using System.Data.Entity;
 
 namespace Domain.Concrete
 {
     public class EFContentRepository : IContentRepository
     {
-        EFDbContext context = new EFDbContext();
+       EFDbContext context = new EFDbContext();
 
         public IEnumerable<Content> Contents
         {
             get
             {
-                return context.Contents;
+                return context.Contents.Include(x => x.ContentType).Include(x => x.Category).Include(x => x.Rates);
             }
         }
 
@@ -52,9 +51,10 @@ namespace Domain.Concrete
                     if (dbEntry != null)
                     {
                         dbEntry.Category = content.Category;
-                        dbEntry.ContentDescription = content.ContentDescription;
+                        dbEntry.Description = content.Description;
                         dbEntry.ContentType = content.ContentType;
                         dbEntry.Data = content.Data;
+                        dbEntry.Name = content.Name;
                     }
                 }
                 context.SaveChanges();

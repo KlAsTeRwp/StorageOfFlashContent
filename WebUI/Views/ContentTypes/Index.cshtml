@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Domain.Entities.ContentType>
+
+@{
+    ViewBag.Title = "Типы контентов";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Типы контентов</h2>
+
+<p>
+    @Html.ActionLink("Добавить новый тип контента", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Extensions)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Extensions)
+        </td>
+        <td>
+            @Html.ActionLink("Изменить", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Подробности", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
