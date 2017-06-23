@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<WebUI.Models.ViewModels.ContentListViewModel>
 
 @{
+    ViewBag.Title = "Главная";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<table class="table">
+<table class="table" border="0">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -17,8 +18,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
-        <td>
-            @Html.ActionLink("Посмотреть", "Details", new { id = item.ID})
+        <td class="btn-group-vertical">
+            @Html.ActionLink("Посмотреть", "Details", new { id = item.ID}, new { @class = "btn btn-default"})
         </td>
     </tr>
 }

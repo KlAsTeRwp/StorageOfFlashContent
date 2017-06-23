@@ -37,15 +37,14 @@ namespace WebUI.Controllers
             return View(list);
         }
 
-        [HttpPost]
         public ActionResult Details(int id)
         {
             Content temp = contentRepository.Get(id);
             if (temp == null)
                 return HttpNotFound();
-            ContentListViewModel content = new ContentListViewModel
+            ContentViewModel content = new ContentViewModel
             {
-                AverageRate = (temp.Rates.Count > 0) ? temp.Rates.Average(x => x.Value) : 0.00,
+                Rates = temp.Rates,
                 Category = temp.Category.Name,
                 ContentType = temp.ContentType.Type,
                 Description = temp.Description,

@@ -89,8 +89,29 @@ namespace WebUI.Controllers
                 rateRepository.Save(newRate);
                 return RedirectToAction("Index");
             }
-
+            rate.Contents = contentRepository.Contents;
             return View(rate);
+        }
+
+        [HttpPost]
+        public ActionResult CreateFromHome(string desc, int value, int contentid)
+        {
+            if (value > 10 || value < 0)
+            {
+                return RedirectToAction("Details", "Home", new { id = contentid });
+            }
+            if (!(String.IsNullOrEmpty(desc) || contentid == 0))
+            {
+
+                Rate newRate = new Rate
+                {
+                    ContentID = contentid,
+                    Description = desc,
+                    Value = value
+                };
+                rateRepository.Save(newRate);
+            }
+            return RedirectToAction("Details", "Home", new { id = contentid});
         }
 
         // GET: Rates/Edit/5

@@ -1,11 +1,11 @@
 ﻿@using WebUI.Models.ViewModels
-@model ContentListViewModel
+@model ContentViewModel 
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script type="text/javascript" src="~/Scripts/swfobject.js"></script>
 <div>
     <hr />
     @Html.Partial("GetContent", Model)

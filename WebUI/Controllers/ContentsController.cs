@@ -46,16 +46,21 @@ namespace WebUI.Controllers
             return View(list);
         }
 
-        public ActionResult GetFile(int id)
+        public FileContentResult GetFile(int id)
         {
             Content returnedFile = contentRepository.Get(id);
-            if (returnedFile == null)
-            {
-                return HttpNotFound();
-            }
             string FileName = returnedFile.Name + returnedFile.ContentType.Extensions;
             byte[] Data = returnedFile.Data;
             return File(Data, returnedFile.ContentType.Type, FileName);
+        }
+
+        public String GetData(int id)
+
+        {
+            Content returnedFile = contentRepository.Get(id);
+            string FileName = returnedFile.Name + returnedFile.ContentType.Extensions;
+            byte[] Data = returnedFile.Data;
+            return Convert.ToBase64String(returnedFile.Data);
         }
 
         // GET: Contents/Details/5
@@ -102,6 +107,8 @@ namespace WebUI.Controllers
                 contentRepository.Save(newContent);
                 return RedirectToAction("Index");
             }
+            content.Categories = categoryRepository.Categories;
+            content.ContentTypes = contentTypeRepository.ContentTypes;
             return View(content);
         }
 
@@ -113,7 +120,7 @@ namespace WebUI.Controllers
             {
                 return HttpNotFound();
             }
-            ContentEditViewModel contentEditViewModel = new ContentEditViewModel()
+            ContentEditViewModel contentEditViewModel = new ContentEditViewModel
             {
                 CategoryID = content.CategoryID,
                 ContentTypeID = content.ContentTypeID,
@@ -163,7 +170,16 @@ namespace WebUI.Controllers
             {
                 return HttpNotFound();
             }
-            return View(content);
+            ContentViewModel tempModel = new ContentViewModel
+            {
+                Category = content.Category.Name,
+                Name = content.Name,
+                Description = content.Description,
+                ID = content.ID,
+                ContentType = content.ContentType.Type,
+                Rates = content.Rates
+            };
+            return View(tempModel);
         }
 
         // POST: Contents/Delete/5
@@ -173,14 +189,6 @@ namespace WebUI.Controllers
         {
             contentRepository.Delete(id);
             return RedirectToAction("Index");
-        }
-
-        [HttpPost]
-        public ActionResult GetContent(ContentListViewModel content)
-        {
-            if (content == null)
-                return HttpNotFound();
-            return PartialView(content);
         }
     }
 }

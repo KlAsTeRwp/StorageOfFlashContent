@@ -1,0 +1,80 @@
+﻿@model WebUI.Models.ViewModels.ContentViewModel
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Ссылка")
+        </dt>
+
+        <dd>
+            @Html.ActionLink("Скачать", "GetFile", "Contents", new { id = Model.ID }, new { @class="btn btn-link " })
+        </dd>
+    </dl>
+    <div class="panel">
+        <div class="panel-title">
+            @Html.DisplayName("Оценки")
+        </div>
+        <div class="panel-body">
+                @foreach (var item in Model.Rates)
+                {
+                    <div class="panel-group">
+                        @Html.Partial("GetRate", item)
+                    </div>
+                }
+        </div>
+    </div>
+    @using (Html.BeginForm("CreateFromHome", "Rates", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.Label("Добавить оценку")
+        <input type="hidden" value="@Model.ID" name="contentid" />
+            <div class="form-group">
+                @Html.Label("Оценка", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBox("value", new { value = "5" }, new { @type = "number", @class = "form-control", } )
+                </div>             
+            </div>
+            <div class="form-group">
+                @Html.Label("Отзыв", new { @class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.TextArea("desc", new { @class = "form-control"})
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Добавить отзыв" class="btn btn-default" />
+                </div>
+            </div>
+    }
+</div>

@@ -6,21 +6,22 @@
     <title>@ViewBag.Title - Storage of flash content</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Storage of flash content", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("STORAGE OF FLASH CONTENT", "Index", "Home", "", new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Управление контентом", "Index", "Contents")</li>
                 </ul>
             </div>
         </div>
@@ -33,9 +34,9 @@
         <footer>
             <p>&copy; @DateTime.Now.Year - Storage of flash content</p>
         </footer>
-        
+
     </div>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

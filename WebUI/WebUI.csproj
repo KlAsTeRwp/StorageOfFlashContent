@@ -127,23 +127,26 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Views\Scripts\bootstrap.js" />
-    <Content Include="Views\Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\storageofflashcontent - Web Deploy.pubxml" />
-    <Content Include="Views\Contents\GetContent.cshtml" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\swfobject.js" />
+    <Content Include="Views\Shared\GetContent.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Views\Scripts\jquery-3.1.1.js" />
-    <Content Include="Views\Scripts\jquery-3.1.1.min.js" />
-    <Content Include="Views\Scripts\jquery-3.1.1.slim.js" />
-    <Content Include="Views\Scripts\jquery-3.1.1.slim.min.js" />
-    <None Include="Views\Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Views\Scripts\jquery.validate.js" />
-    <Content Include="Views\Scripts\jquery.validate.min.js" />
-    <Content Include="Views\Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Views\Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Views\Scripts\modernizr-2.8.3.js" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -165,6 +168,7 @@
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\ViewModels\ContentEditViewModel.cs" />
     <Compile Include="Models\ViewModels\ContentListModelView.cs" />
+    <Compile Include="Models\ViewModels\ContentViewModel.cs" />
     <Compile Include="Models\ViewModels\RateEditViewModel.cs" />
     <Compile Include="Models\ViewModels\RateViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -174,8 +178,8 @@
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Scripts\jquery-3.1.1.slim.min.map" />
-    <Content Include="Views\Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\ContentTypes\Create.cshtml" />
     <Content Include="Views\ContentTypes\Delete.cshtml" />
     <Content Include="Views\ContentTypes\Details.cshtml" />
@@ -197,6 +201,7 @@
     <Content Include="Views\Contents\Edit.cshtml" />
     <Content Include="Views\Contents\Index.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\GetRate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
